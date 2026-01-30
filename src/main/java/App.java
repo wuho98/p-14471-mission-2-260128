@@ -23,6 +23,8 @@ public class App {
                     control.delete(id);
                 }catch (NumberFormatException e){
                     System.out.println("다시 하시오");
+                }catch (ArrayIndexOutOfBoundsException e){
+                    System.out.println("다시");
                 }
             } else if (cmd.startsWith("수정")){
                 String[] str = cmd.split("=");
@@ -31,6 +33,8 @@ public class App {
                     control.update(id);
                 }catch (NumberFormatException e){
                     System.out.println("다시 하시오");
+                }catch (ArrayIndexOutOfBoundsException e){
+                    System.out.println("다시");
                 }
             } else if (cmd.equals("목록")){
                 control.listUp();
