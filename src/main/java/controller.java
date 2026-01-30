@@ -10,7 +10,7 @@ public class controller {
     public controller(Scanner sc){
         this.sc = sc;
     }
-    //명언 등록 깃허브 해보기
+    //명언 등록 깃허브
     public void add(){
         count++;
         System.out.print("명언 :");
