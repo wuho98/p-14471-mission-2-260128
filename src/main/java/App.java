@@ -1,14 +1,14 @@
 import java.util.Scanner;
 
-public class main {
-    public static void main(String[] args) {
+public class App {
+    public void run(){
         Scanner sc = new Scanner(System.in);
-        controller control = new controller(sc);
+        WiseSayingController control = new WiseSayingController(sc);
 
         // 반복문
         while (true) {
             System.out.println("== 명언 앱 ==");
-            System.out.println("명령) ");
+            System.out.print("명령) ");
 
             String cmd = sc.nextLine();
 
@@ -32,6 +32,8 @@ public class main {
                 }catch (NumberFormatException e){
                     System.out.println("다시 하시오");
                 }
+            } else if (cmd.equals("목록")){
+                control.listUp();
             }
         }
     }
