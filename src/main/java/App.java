@@ -11,33 +11,26 @@ public class App {
             System.out.print("명령) ");
 
             String cmd = sc.nextLine();
+            Rq rq = new Rq();
 
             if (cmd.equals("종료")) {
                 break;
             } else if (cmd.equals("등록")) {
                 control.add();
             } else if (cmd.startsWith("삭제")) {
-                String[] str = cmd.split("=");
-                try {
-                    int id = Integer.parseInt(str[1]);
-                    control.delete(id);
-                }catch (NumberFormatException e){
-                    System.out.println("다시 하시오");
-                }catch (ArrayIndexOutOfBoundsException e){
-                    System.out.println("다시");
+                rq.parse(cmd);
+                if(rq.isValid()) {
+                    control.delete(rq.getId());
                 }
             } else if (cmd.startsWith("수정")){
-                String[] str = cmd.split("=");
-                try {
-                    int id = Integer.parseInt(str[1]);
-                    control.update(id);
-                }catch (NumberFormatException e){
-                    System.out.println("다시 하시오");
-                }catch (ArrayIndexOutOfBoundsException e){
-                    System.out.println("다시");
+                rq.parse(cmd);
+                if(rq.isValid()) {
+                    control.update(rq.getId());
                 }
             } else if (cmd.equals("목록")){
                 control.listUp();
+            } else {
+                System.out.println("명령어를 다시 입력하세요");
             }
         }
     }

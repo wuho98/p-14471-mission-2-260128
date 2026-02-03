@@ -52,14 +52,13 @@ public class WiseSayingController {
         System.out.print("작가 : ");
         found.setAuthor(sc.nextLine());
     }
-    //목록 있는지 찾기
+    //목록 찾기
     public void listUp(){
         System.out.println("번호 / 작가 / 명언");
         System.out.println("----------------------");
         for (int i = list.size() - 1; i >= 0; i--) {
             WiseSaying s = list.get(i);
             System.out.println( s.getId() + " / " + s.getAuthor() + " / " + s.getSay());
-
         }
     }
     // 명언이 목록 안에 있는지 찾기
