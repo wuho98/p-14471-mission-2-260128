@@ -1,3 +1,5 @@
+package wiseSaying.entity;
+
 public class WiseSaying {
     private int id; //이름
     private String say; //명언

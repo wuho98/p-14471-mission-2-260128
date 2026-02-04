@@ -1,3 +1,5 @@
+import wiseSaying.controller.WiseSayingController;
+
 import java.util.Scanner;
 
 public class App {
@@ -11,19 +13,17 @@ public class App {
             System.out.print("명령) ");
 
             String cmd = sc.nextLine();
-            Rq rq = new Rq();
+            Rq rq = new Rq(cmd);
 
             if (cmd.equals("종료")) {
                 break;
             } else if (cmd.equals("등록")) {
                 control.add();
             } else if (cmd.startsWith("삭제")) {
-                rq.parse(cmd);
                 if(rq.isValid()) {
                     control.delete(rq.getId());
                 }
             } else if (cmd.startsWith("수정")){
-                rq.parse(cmd);
                 if(rq.isValid()) {
                     control.update(rq.getId());
                 }

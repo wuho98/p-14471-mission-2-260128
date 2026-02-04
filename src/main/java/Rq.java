@@ -3,7 +3,7 @@ public class Rq {
     private int id;
     private boolean valid;
 
-    public void parse(String cmd){
+    public Rq(String cmd){
         this.command = cmd;
         valid = false;
 
